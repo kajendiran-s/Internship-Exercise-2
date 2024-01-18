@@ -7,17 +7,21 @@ def order(num):
 
 
 def IsArmstrong(num):
-    n = order(num)
-    temp = num
-    sum = 0
-    while(temp != 0):
-        dig = temp%10
-        sum += dig**n
-        temp //= 10
+        n = order(num)
+        temp = num
+        sum = 0
+        while(temp != 0):
+            dig = temp%10
+            sum += dig**n
+            temp //= 10
 
-    if(num == sum):
-        return "Armstrong number"
-    else:
-        return "Not an Armstrong number"
+        if(num == sum):
+            return "Armstrong number"
+        else:
+            return "Not an Armstrong number"
 
-print(IsArmstrong(4071))
+try:
+    innum = int(input("Enter the number:"))
+    print(IsArmstrong(innum))
+except:
+    print("Enter valid number")
